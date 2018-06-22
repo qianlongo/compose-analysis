@@ -23,4 +23,6 @@ const mids = compose([ one, two, three ])
 mids()
   .then(() => {
     console.log('end')
+  }).catch((e) => {
+    console.log(e)
   })

@@ -17,7 +17,9 @@ module.exports = compose
  */
 
 function compose (middleware) {
+  // 传入的middleware必须是数组
   if (!Array.isArray(middleware)) throw new TypeError('Middleware stack must be an array!')
+  // 检测middleware中的各项，每项都需是函数
   for (const fn of middleware) {
     if (typeof fn !== 'function') throw new TypeError('Middleware must be composed of functions!')
   }
